@@ -97,22 +97,36 @@
     <div class="contato-form">
       <h3>Agende sua avaliação</h3>
 
-      <form id="contactForm"action="https://formspree.io/f/xqarolwz" method="POST">
+      <form id="contactForm" action="https://formspree.io/f/xqarolwz" method="POST">
+
         <input type="text" id="nome" name="nome" placeholder="Nome" required>
-        <small id="erroNome" style="color:red; display:none;">Digite um nome válido (mínimo 3 letras).</small>
+        <small id="erroNome" style="color:red; display:none;">
+          Digite um nome válido (mínimo 3 letras).
+        </small>
+
+        <!-- 🔹 CAMPO EMAIL (ADICIONADO, NÃO REMOVE NADA) -->
+        <input type="email" id="email" name="email" placeholder="E-mail" required>
+        <small id="erroEmail" style="color:red; display:none;">
+          Digite um e-mail válido.
+        </small>
 
         <input type="tel" id="telefone" name="telefone" placeholder="Telefone" required>
-        <small id="erroTelefone" style="color:red; display:none;">Digite um telefone válido com DDD.</small>
+        <small id="erroTelefone" style="color:red; display:none;">
+          Digite um telefone válido com DDD.
+        </small>
 
         <textarea name="mensagem" rows="4" placeholder="Mensagem"></textarea>
+
         <button class="botao" type="submit">Enviar</button>
       </form>
 
     </div>
   </div>
 </section>
+
 <script src="./script.js"></script>
 <script src="./email.js"></script>
+
 </main>
 
 <footer class="footer">
@@ -133,23 +147,32 @@ telefoneInput.addEventListener("input", () => {
 });
 </script>
 
-<!-- VALIDAÇÃO -->
+<!-- VALIDAÇÃO (MANTIDA + EMAIL) -->
 <script>
 document.getElementById("contactForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
   const nome = document.getElementById("nome").value.trim();
+  const email = document.getElementById("email").value.trim();
   const telefone = document.getElementById("telefone").value.trim();
+
   const erroNome = document.getElementById("erroNome");
+  const erroEmail = document.getElementById("erroEmail");
   const erroTelefone = document.getElementById("erroTelefone");
 
   erroNome.style.display = "none";
+  erroEmail.style.display = "none";
   erroTelefone.style.display = "none";
 
   let valido = true;
 
   if (!/^[A-Za-zÀ-ÿ\s]{3,}$/.test(nome)) {
     erroNome.style.display = "block";
+    valido = false;
+  }
+
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    erroEmail.style.display = "block";
     valido = false;
   }
 
@@ -161,8 +184,7 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
 
   if (!valido) return;
 
-  alert("Formulário enviado, logo entraremos em contato.");
-  this.submit();
+  this.submit(); 
 });
 </script>
 
