@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Dorazio Odontologia</title>
-  <link rel="stylesheet" href="page.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="page.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"/>
   <script src="https://kit.fontawesome.com/a2e0a6b2e4.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-  <!-- ===== HEADER ===== -->
   <header class="header">
     <div class="container header-inner">
       <div class="logo">
-        <img src="projeto.jpg" alt="Logo Dorazio" class="logo-img" />
+        <img src="/imagens/projeto.jpg" alt="Logo Dorazio" class="logo-img"/>
         <div>
           <h1 class="brand">Dorazio Odontologia</h1>
           <p class="tag">Transformando Sorrisos, Mudando Vidas</p>
         </div>
       </div>
 
-      <nav class="menu" aria-label="Menu principal">
+      <nav class="menu">
         <ul>
           <li><a href="#inicio">Início</a></li>
           <li><a href="#sobre">Sobre</a></li>
@@ -32,153 +31,89 @@
     </div>
   </header>
 
-  <!-- ===== HERO ===== -->
   <main>
-    <section id="inicio" class="hero">
-      <div class="container hero-grid">
-        <div class="hero-texto">
-          <h2>Um sorriso saudável começa aqui</h2>
-          <p>Atendimento humanizado, tecnologia de ponta e tratamentos personalizados para todas as idades.</p>
-          <div class="hero-actions">
-            <a class="botao" href="#contato">Agendar avaliação</a>
-            <a class="botao outline" href="#servicos">Ver serviços</a>
+  <section id="inicio" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-texto">
+        <h2>Um sorriso saudável começa aqui</h2>
+        <p>Atendimento humanizado, tecnologia de ponta e tratamentos personalizados.</p>
+        <div class="hero-actions">
+          <a class="botao" href="#contato">Agendar avaliação</a>
+          <a class="botao outline" href="#servicos">Ver serviços</a>
+        </div>
+      </div>
+
+      <div class="hero-imagem">
+        <div class="carrossel">
+          <div class="slides">
+            <img src="/imagens/dentista.webp" alt="Dentista conversando com paciente">
+            <img src="/imagens/IMG-20251104-WA0009.jpg" alt="Equipe da clínica">
+            <img src="/imagens/IMG-20251104-WA0010.jpg" alt="Paciente sorrindo">
           </div>
         </div>
-
-        <div class="hero-imagem">
-          <div class="carrossel" aria-hidden="false">
-            <div class="slides">
-              <img src="../Landing pages/imagens/dentista.webp " alt="dentista conversando com o pai">
-              <img src="../Landing pages/imagens/IMG-20251104-WA0009.jpg" alt="Equipe da clínica">
-              <img src="../Landing pages/imagens/IMG-20251104-WA0010.jpg" alt="Paciente sorrindo">
-            </div>
-          </div>
-        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="sobre" class="about">
-      <div class="container about-grid">
-        <div class="about-text">
-          <h3>Sobre a Dorazio</h3>
-          <p>Nascemos em agosto de 2023 com o objetivo de transformar sorrisos e gerar bem-estar. Nossa equipe é formada por profissionais atualizados e equipamentos modernos para garantir segurança, conforto e excelentes resultados.</p>
-          <ul class="bullets">
-            <ul> •Atendimento humanizado</ul>
-            <ul> •Tecnologia digital</ul>
-            <ul> •Planos personalizados</ul>
-          </ul>
-        </div>
-        <div class="about-image">
-          <img src="/Landing pages/imagens/IMG-20251104-WA0005.jpg" alt="Equipe da clínica">
-        </div>
+  <section id="sobre" class="about">
+    <div class="container about-grid">
+      <div class="about-text">
+        <h3>Sobre a Dorazio</h3>
+        <p>Nascemos em agosto de 2023 com o objetivo de transformar sorrisos e gerar bem-estar.</p>
+        <ul class="bullets">
+          <li>Atendimento humanizado</li>
+          <li>Tecnologia digital</li>
+          <li>Planos personalizados</li>
+        </ul>
       </div>
-    </section>
-
-    <!-- ===== SERVIÇOS ===== -->
-    <section id="servicos" class="servicos">
-      <div class="container">
-        <h3>Nossos Serviços</h3>
-        <p class="lead">Tratamentos pensados para devolver estética, função e confiança.</p>
-        <div class="cards">
-          <article class="card">
-            <i class="fas fa-tooth"></i>
-            <h4>Clareamento</h4>
-            <p>Procedimentos seguros e resultados naturais.</p>
-          </article>
-
-          <article class="card">
-            <i class="fas fa-teeth-open"></i>
-            <h4>Implantes</h4>
-            <p>Recuperação de função com materiais de alta qualidade.</p>
-          </article>
-
-          <article class="card">
-            <i class="fas fa-smile"></i>
-            <h4>Ortodontia</h4>
-            <p>Aparelhos estéticos e tratamento digitalizado.</p>
-          </article>
-
-          <article class="card">
-            <i class="fas fa-toothbrush"></i>
-            <h4>Higiene</h4>
-            <p>Limpeza profissional e prevenção personalizada.</p>
-          </article>
-
-          <article class="card">
-            <i class="fas fa-user-md"></i>
-            <h4>Check-up</h4>
-            <p>Avaliação completa e plano de cuidado contínuo.</p>
-          </article>
-        </div>
+      <div class="about-image">
+        <img src="/imagens/IMG-20251104-WA0005.jpg" alt="Equipe da clínica">
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ===== CONTATO ===== -->
-    <section id="contato" class="contato">
-      <div class="container contato-grid">
-        <div class="contato-form">
-          <h3>Agende sua avaliação</h3>
-          <p>Preencha o formulário e nossa equipe entrará em contato.</p>
-          <form id="contactForm">
-            <div class="row">
-              <input type="text" name="nome" placeholder="Seu nome" required />
-              <input type="email" name="email" placeholder="Seu e-mail" required />
-            </div>
-            <textarea name="mensagem" rows="5" placeholder="Sua mensagem / preferência de horário"></textarea>
-            <div class="form-actions">
-              <button type="submit" class="botao">Enviar</button>
-              <button type="button" id="callWhats" class="botao outline">Agendar via WhatsApp</button>
-            </div>
-            <p class="form-note">* Ao enviar, você será contactado para confirmar a data e o horário.</p>
-          </form>
-        </div>
-
-        <div class="contato-info">
-          <h4>Contato</h4>
-          <p><strong>Endereço:</strong> Av. Principal, nº 123 — Centro</p>
-          <p><strong>Telefone/WhatsApp:</strong> <a href="https://wa.me/5599999999999" target="_blank">+55 99 99999-9999</a></p>
-          <p><strong>Horário:</strong> Seg–Sex 8h–18h • Sáb 8h–12h</p>
-          <div class="map-placeholder" aria-hidden="true">[Mapa / Localização]</div>
-        </div>
+  <section id="servicos" class="servicos">
+    <div class="container">
+      <h3>Nossos Serviços</h3>
+      <div class="cards">
+        <article class="card"><i class="fas fa-tooth"></i><h4>Clareamento</h4><p>Resultados naturais.</p></article>
+        <article class="card"><i class="fas fa-teeth-open"></i><h4>Implantes</h4><p>Alta qualidade.</p></article>
+        <article class="card"><i class="fas fa-smile"></i><h4>Ortodontia</h4><p>Tratamento digital.</p></article>
+        <article class="card"><i class="fas fa-toothbrush"></i><h4>Higiene</h4><p>Prevenção.</p></article>
+        <article class="card"><i class="fas fa-user-md"></i><h4>Check-up</h4><p>Avaliação completa.</p></article>
       </div>
-    </section>
+    </div>
+  </section>
+
+  <section id="contato" class="contato">
+    <div class="container contato-grid">
+      <div class="contato-form">
+        <h3>Agende sua avaliação</h3>
+        <form>
+          <input type="text" placeholder="Nome" required>
+          <input type="email" placeholder="Email" required>
+          <textarea rows="4" placeholder="Mensagem"></textarea>
+          <button class="botao">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </section>
   </main>
 
+  <button class="chat-toggle">💬</button>
 
-
-  <!-- ===== CHATBOT ===== -->
-  <button class="chat-toggle" id="chatToggle" aria-label="Abrir chat">💬</button>
-
-  <aside class="chatbot" id="chatbot" role="dialog" aria-label="Assistente Dorazio">
+  <aside class="chatbot">
     <div class="chat-header">
-      <div class="chat-title">
-        <img src="projeto.jpg" alt="Avatar" class="chat-avatar" />
-        <div>
-          <strong>Assistente Dorazio</strong>
-          <small>Pronto para ajudar</small>
-        </div>
-      </div>
-      <button id="fecharChat" aria-label="Fechar chat">✖</button>
-    </div>
-
-    <div class="chat-body" id="chatBody" aria-live="polite">
-      <div id="chatRespostas" class="chat-responses"></div>
+      <img src="/imagens/projeto.jpg" class="chat-avatar" alt="Assistente">
+      <strong>Assistente Dorazio</strong>
     </div>
   </aside>
 
-  <!-- ===== FOOTER ===== -->
   <footer class="footer">
-    <div class="container footer-inner">
-      <p>© 2025 Dorazio Odontologia — Todos os direitos reservados.</p>
-      <div class="socials">
-        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-      </div>
-    </div>
+    <p>© 2025 Dorazio Odontologia</p>
   </footer>
 
   <script src="script.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="email.js" defer></script>
 </body>
 </html>
