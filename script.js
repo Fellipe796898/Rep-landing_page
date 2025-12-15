@@ -1,7 +1,5 @@
-// ===== CARREGAMENTO SEGURO =====
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* ---------- CARROSSEL (fade automático) ---------- */
   const slides = document.querySelectorAll(".slides img");
   let indice = 0;
   function mostrarSlide(i){
@@ -145,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function redirecionarWhatsApp(){
-    window.open("wa.link/8mfzgc", "_blank");
+    window.open("wa.link/8mfzgc");
   }
 
   /* ---------- FORMULÁRIO: envio via Formspree ---------- */
