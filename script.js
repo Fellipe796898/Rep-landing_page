@@ -21,7 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const fecharChat = document.getElementById("fecharChat");
   const chatRespostas = document.getElementById("chatRespostas");
 
-  // Abrir o chatbot
   if (chatToggle && chatbot) {
     chatToggle.addEventListener("click", () => {
       const isHidden = chatbot.style.display === "none" || chatbot.style.display === "";
@@ -33,14 +32,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Fechar o chatbot
   if (fecharChat) {
     fecharChat.addEventListener("click", () => {
       chatbot.style.display = "none";
     });
   }
 
-  // Função para escrever texto de forma animada
   function escreverTexto(elemento, texto, delay = 18){
     let i = 0;
     elemento.textContent = "";
@@ -54,7 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }, delay);
   }
 
-  // Iniciar conversa inicial
   function iniciarConversa(){
     const msg1 = document.createElement("div");
     msg1.className = "chat-message bot";
@@ -74,7 +70,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 1200);
   }
 
-  // Criar opções iniciais de interação
   function criarOpcoesIniciais(){
     if (document.querySelector(".chat-options")) return;
     const opcoes = document.createElement("div");
@@ -93,7 +88,6 @@ document.addEventListener("DOMContentLoaded", () => {
     chatRespostas.appendChild(opcoes);
   }
 
-  // Respostas dependendo da opção escolhida
   function responder(opcao){
     const resposta = document.createElement("div");
     resposta.className = "chat-message bot";
@@ -119,7 +113,6 @@ document.addEventListener("DOMContentLoaded", () => {
     chatRespostas.scrollTop = chatRespostas.scrollHeight;
   }
 
-  // Mostrar opções de "horários", "localização" e "agendar"
   function mostrarSubOpcoes(){
     const extra = document.createElement("div");
     extra.className = "chat-options";
@@ -143,7 +136,6 @@ document.addEventListener("DOMContentLoaded", () => {
     chatRespostas.scrollTop = chatRespostas.scrollHeight;
   }
 
-  // Mostrar botão para falar com atendente
   function mostrarBotaoAtendente(){
     const wrapper = document.createElement("div");
     wrapper.className = "chat-options";
@@ -157,43 +149,13 @@ document.addEventListener("DOMContentLoaded", () => {
     chatRespostas.scrollTop = chatRespostas.scrollHeight;
   }
 
-  // Redirecionar para WhatsApp
   function redirecionarWhatsApp(){
     window.open("https://wa.link/8mfzgc", "_blank");
   }
 
-  // Formulário de envio via Formspree (opcional)
-  const contactForm = document.getElementById("contactForm");
-  const callWhats = document.getElementById("callWhats");
-  if (contactForm) {
-    contactForm.addEventListener("submit", async (e) => {
-      e.preventDefault();
+  // ❌ REMOVIDO envio manual do formulário (fetch)
+  // ✅ Formspree agora usa action + POST do HTML
 
-      const formData = new FormData(contactForm);
-      const data = Object.fromEntries(formData.entries());
-
-      try {
-        const response = await fetch("https://formspree.io/f/yourFormID", {
-          method: "POST",
-          headers: { "Accept": "application/json" },
-          body: formData
-        });
-
-        if (response.ok) {
-          alert(`Obrigado ${data.nome || "Cliente"}! Sua solicitação foi recebida.`);
-          contactForm.reset();
-        } else {
-          alert("Ops! Houve um problema. Tente novamente.");
-        }
-      } catch (err) {
-        alert("Erro de envio. Verifique sua conexão.");
-      }
-    });
-  }
-
-  if (callWhats) {
-    callWhats.addEventListener("click", () => redirecionarWhatsApp());
-  }
   iniciarConversa();
 
-}); // DOMContentLoaded end
+});
