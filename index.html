@@ -17,7 +17,7 @@
 <header class="header">
   <div class="container header-inner">
     <div class="logo">
-      <img src="/imagens/projeto.jpg" alt="Logo Dorazio" class="logo-img"/>
+      <img src="imagens/projeto.jpg" alt="Logo Dorazio" class="logo-img"/>
       <div>
         <h1 class="brand">Dorazio Odontologia</h1>
         <p class="tag">Transformando Sorrisos, Mudando Vidas</p>
@@ -51,9 +51,9 @@
     <div class="hero-imagem">
       <div class="carrossel">
         <div class="slides">
-          <img src="/imagens/dentista.webp" alt="Dentista conversando com paciente">
-          <img src="/imagens/IMG-20251104-WA0009.jpg" alt="Equipe da clínica">
-          <img src="/imagens/IMG-20251104-WA0010.jpg" alt="Paciente sorrindo">
+          <img src="imagens/dentista.webp" alt="Dentista conversando com paciente">
+          <img src="imagens/IMG-20251104-WA0009.jpg" alt="Equipe da clínica">
+          <img src="imagens/IMG-20251104-WA0010.jpg" alt="Paciente sorrindo">
         </div>
       </div>
     </div>
@@ -74,7 +74,7 @@
     </div>
 
     <div class="about-image">
-      <img src="/imagens/IMG-20251104-WA0005.jpg" alt="Equipe da clínica">
+      <img src="imagens/IMG-20251104-WA0005.jpg" alt="Equipe da clínica">
     </div>
   </div>
 </section>
@@ -101,7 +101,7 @@
         <input type="text" id="nome" name="nome" placeholder="Nome" required>
         <small id="erroNome" style="color:red; display:none;">Digite um nome válido (mínimo 3 letras).</small>
 
-        <input type="tel" id="telefone" name="telefone" placeholder="(DDD) 9xxxx-xxxx" required>
+        <input type="tel" id="telefone" name="telefone" placeholder="Telefone" required>
         <small id="erroTelefone" style="color:red; display:none;">Digite um telefone válido com DDD.</small>
 
         <textarea name="mensagem" rows="4" placeholder="Mensagem"></textarea>
@@ -111,7 +111,8 @@
     </div>
   </div>
 </section>
-
+<script src="./script.js"></script>
+<script src="./email.js"></script>
 </main>
 
 <footer class="footer">
@@ -125,12 +126,8 @@ const telefoneInput = document.getElementById("telefone");
 telefoneInput.addEventListener("input", () => {
   let valor = telefoneInput.value.replace(/\D/g, "").slice(0, 11);
 
-  if (valor.length >= 2) {
-    valor = `(${valor.slice(0, 2)}) ${valor.slice(2)}`;
-  }
-  if (valor.length >= 10) {
-    valor = `${valor.slice(0, 10)}-${valor.slice(10)}`;
-  }
+  if (valor.length >= 2) valor = `(${valor.slice(0, 2)}) ${valor.slice(2)}`;
+  if (valor.length >= 10) valor = `${valor.slice(0, 10)}-${valor.slice(10)}`;
 
   telefoneInput.value = valor;
 });
@@ -143,7 +140,6 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
 
   const nome = document.getElementById("nome").value.trim();
   const telefone = document.getElementById("telefone").value.trim();
-
   const erroNome = document.getElementById("erroNome");
   const erroTelefone = document.getElementById("erroTelefone");
 
@@ -157,15 +153,15 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
     valido = false;
   }
 
-  const telefoneNumeros = telefone.replace(/\D/g, "");
-  if (!(telefoneNumeros.length === 10 || telefoneNumeros.length === 11)) {
+  const telNums = telefone.replace(/\D/g, "");
+  if (!(telNums.length === 10 || telNums.length === 11)) {
     erroTelefone.style.display = "block";
     valido = false;
   }
 
   if (!valido) return;
 
-  alert("Formulário enviado logo entraremos em contato ");
+  alert("Formulário enviado, logo entraremos em contato.");
   this.submit();
 });
 </script>
