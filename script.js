@@ -153,8 +153,52 @@ document.addEventListener("DOMContentLoaded", () => {
     window.open("https://wa.link/8mfzgc", "_blank");
   }
 
-  // ❌ REMOVIDO envio manual do formulário (fetch)
-  // ✅ Formspree agora usa action + POST do HTML
+  // ===============================
+  // ✅ ALTERAÇÃO: EVENTO DE SUCESSO NO ENVIO
+  // ===============================
+  const contactForm = document.getElementById("contactForm");
+
+  if (contactForm) {
+    contactForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(contactForm);
+
+      try {
+        const response = await fetch("https://formspree.io/f/xqarolwz", {
+          method: "POST",
+          headers: { "Accept": "application/json" },
+          body: formData
+        });
+
+        if (response.ok) {
+          // 🔔 EVENTO + MENSAGEM PRO USUÁRIO
+          const sucesso = document.createElement("div");
+          sucesso.style.background = "#e6fff2";
+          sucesso.style.border = "1px solid #2ecc71";
+          sucesso.style.color = "#1e824c";
+          sucesso.style.padding = "14px";
+          sucesso.style.marginTop = "12px";
+          sucesso.style.borderRadius = "6px";
+          sucesso.style.fontSize = "14px";
+          sucesso.innerHTML = `
+            <strong>Consulta enviada com sucesso! 🦷✨</strong><br>
+            Recebemos seus dados e nossa equipe entrará em contato em breve.<br>
+            Obrigado por escolher a <b>Dorazio Odontologia</b>.
+          `;
+
+          contactForm.appendChild(sucesso);
+          contactForm.reset();
+
+          document.dispatchEvent(new Event("consultaEnviada"));
+        } else {
+          alert("Ops! Não foi possível enviar agora. Tente novamente.");
+        }
+      } catch (err) {
+        alert("Erro de conexão. Verifique sua internet.");
+      }
+    });
+  }
 
   iniciarConversa();
 
